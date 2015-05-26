@@ -49,3 +49,5 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
     ro.usb.pid_suffix=1B8
+
+TARGET_OTA_ASSERT_DEVICE := D2303,eagle,eagle_lte
