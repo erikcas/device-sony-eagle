@@ -49,3 +49,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
     ro.usb.pid_suffix=1B8
+
+# TWRP
+PRODUCT_COPY_FILES += \
+    device/sony/eagle/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
