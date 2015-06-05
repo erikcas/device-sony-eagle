@@ -34,6 +34,7 @@ PRODUCT_COPY_FILES += \
     device/sony/eagle/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/sony/eagle/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/sony/eagle/rootdir/fstab.yukon:root/fstab.yukon \
+    device/sony/eagle/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
     device/sony/eagle/rootdir/init.yukon.dev.rc:root/init.yukon.dev.rc
 
 # Product attributes
