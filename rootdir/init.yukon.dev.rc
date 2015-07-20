@@ -23,6 +23,9 @@ on boot
     chown system system /sys/class/input/input0/driver/delay
     chown system system /sys/class/input/input1/driver/cali
 
+#for memsicd sensor
+    mkdir /data/misc/sensors 0777 system system
+
 #SONY misc
 service tad_static /system/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     user root
