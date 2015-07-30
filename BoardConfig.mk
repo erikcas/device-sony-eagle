@@ -48,3 +48,6 @@ TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,barrier=1,noauto_da_alloc,discard"
 TW_CRYPTO_FS_FLAGS := "0x00000406"
 TW_CRYPTO_KEY_LOC := "footer"
 TW_INCLUDE_FUSE_EXFAT := true
+
+#BOARD_KERNEL_CMDLINE += mem=128M@0 mem=755M@255M
+#BOARD_KERNEL_CMDLINE += mem=883M
