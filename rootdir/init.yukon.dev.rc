@@ -23,6 +23,9 @@ on boot
     chown system system /sys/class/input/input0/driver/delay
     chown system system /sys/class/input/input1/driver/cali
 
+    # Prevents permission denied error for telephony
+    chmod 0644 /proc/cmdline
+
 #for memsicd sensor
     mkdir /data/misc/sensors 0777 system system
 
@@ -32,6 +35,13 @@ service btnvtool /system/vendor/bin/btnvtool -I
     group root
     oneshot
 
-service memsicd /system/bin/memsicd
+service ril-daemon1 /system/bin/rild -c 2
     class main
-    oneshot
+    socket rild2 stream 660 root radio
+    socket rild-debug2 stream 660 radio system
+    user root
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
+
+on property:persist.radio.multisim.config=dsds
+    start ril-daemon1
