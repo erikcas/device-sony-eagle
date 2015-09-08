@@ -36,7 +36,8 @@ PRODUCT_COPY_FILES += \
     device/sony/eagle/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/sony/eagle/rootdir/fstab.yukon:root/fstab.yukon \
     device/sony/eagle/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
-    device/sony/eagle/rootdir/init.yukon.dev.rc:root/init.yukon.dev.rc
+    device/sony/eagle/rootdir/init.yukon.dev.rc:root/init.yukon.dev.rc \
+    device/sony/eagle/rootdir/init.class_main.sh:root/init.class_main.sh
 
 # Product attributes
 PRODUCT_NAME := aosp_d2303
@@ -53,4 +54,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
     ro.usb.pid_suffix=1B8
 
-TARGET_OTA_ASSERT_DEVICE := D2303,eagle,eagle_lte
+# DSDS specific properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.multisim.config=dsds \
+    persist.multisim.config=dsds \
+    telephony.lteOnCdmaDevice=0 \
+    ro.telephony.default_network=0,1
+
+TARGET_OTA_ASSERT_DEVICE := D2302,eagle_dsds
