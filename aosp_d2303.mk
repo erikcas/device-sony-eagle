@@ -53,4 +53,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
     ro.usb.pid_suffix=1B8
 
-TARGET_OTA_ASSERT_DEVICE := D2303,eagle,eagle_lte
+# DSDS specific properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.multisim.config=dsds \
+    persist.multisim.config=dsds \
+    telephony.lteOnCdmaDevice=0 \
+    ro.telephony.default_network=0,1
+
+TARGET_OTA_ASSERT_DEVICE := D2302,eagle_dsds
