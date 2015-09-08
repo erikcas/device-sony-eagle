@@ -32,6 +32,13 @@ service btnvtool /system/vendor/bin/btnvtool -I
     group root
     oneshot
 
-service memsicd /system/bin/memsicd
+service ril-daemon1 /system/bin/rild -c 2
     class main
-    oneshot
+    socket rild2 stream 660 root radio
+    socket rild-debug2 stream 660 radio system
+    user root
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
+
+on property:persist.radio.multisim.config=dsds
+    start ril-daemon1
