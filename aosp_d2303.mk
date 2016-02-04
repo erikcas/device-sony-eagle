@@ -54,3 +54,11 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
     ro.usb.pid_suffix=1B8
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.eagle
+
+# Power
+PRODUCT_PACKAGES += \
+    power.eagle
